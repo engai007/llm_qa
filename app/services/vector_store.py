@@ -4,7 +4,7 @@ from qdrant_client.models import Distance, VectorParams, PointStruct, Filter, Fi
 from langfuse import observe
 from app.core.config import settings
 
-client = AsyncQdrantClient(url=settings.qdrant_url)
+client = AsyncQdrantClient(url=settings.qdrant_url,api_key=settings.qdrant_password)
 
 
 async def ensure_collection(vector_size: int) -> None:
